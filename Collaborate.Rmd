@@ -19,9 +19,19 @@ gapminder_1997 <- read_csv("gapminder_1997.csv")
 ```
 
 ```{r}
-ggplot(gapminder_1997, aes(x=lifeExp,y=pop)) +
-geom_point() +
-facet_wrap(vars(continent))
+ggplot(gapminder_1997, aes(x=lifeExp,y=pop, size = pop/1000000, color = continent)) +
+geom_point(alpha = 0.3) +
+facet_wrap(vars(continent)) 
 ```
 
+```{r}
+ggplot(gapminder_1997, aes(x=lifeExp,y=pop, linewidth = pop/1000000, color = continent)) +
+geom_point(alpha = 0.3) +
+  geom_boxplot(alpha = 0.3)
+```
+
+```{r}
+library(ggthemes)
+
+```
 
