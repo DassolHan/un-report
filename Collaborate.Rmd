@@ -32,6 +32,10 @@ geom_point(alpha = 0.3) +
 
 ```{r}
 library(ggthemes)
-
+ggplot(data= gapminder_1997) +
+  aes(x=gdpPercap, y= lifeExp, color= continent, size=pop/1000000) +
+  geom_point()+
+  theme_solarized_2()+
+  scale_color_solarized()
 ```
 
